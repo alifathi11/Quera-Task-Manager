@@ -91,29 +91,47 @@
 
                 <div id="add-new-task-area" class="hidden flex-col gap-3 border-1 border-[var(--neutral-8)] rounded-xl py-4 mt-10">
                     <div class="flex flex-col gap-3 px-5">
-                        <p class="font-[YekanBakh-semi-bold] text-sm text-[var(--neutral-4)]">نام تسک</p>
-                        <textarea name="" id="" placeholder="توضیحات" class="placeholder:text-xs placeholder:font-[YekanBakh-regular] placeholder:text-[var(--neutral-5)] resize-none outline-none"></textarea>
+                        <input id="task-name" type="text" placeholder="نام تسک" class="placeholder:font-[YekanBakh-semi-bold] placeholder:text-sm placeholder:text-[var(--neutral-4)] outline-none">
+                        <textarea id="task-description" placeholder="توضیحات" class="placeholder:text-xs placeholder:font-[YekanBakh-regular] placeholder:text-[var(--neutral-5)] resize-none outline-none"></textarea>
+
                         <button id="open-tags-btn" class="flex gap-2 items-center border-1 border-[var(--neutral-8)] rounded-lg py-2 px-3 w-fit">
                             <img id="tag-image" src="./assets/images/tag-right.svg" alt="tag">
                             <p class="text-xs text-[var(--neutral-5)] font-[YekanBakh-regular]">تگ‌ها</p>
                         </button>
+                        
                         <div id="tags-bar" class="mt-5 rounded-lg border-1 border-[var(--neutral-8)] font-[YekanBakh-regular] text-xs flex items-center gap-3 w-fit p-2">
-                            <div class="bg-[var(--background-green)] py-1 px-2 rounded-sm">
+                            <div id="low-priority" class="bg-[var(--background-green)] py-1 px-2 rounded-sm">
                                 <p class="text-[var(--green)]">پایین</p>
                             </div>
 
                             <div class="h-5 w-[0.5px] bg-[var(--neutral-8)]"></div>
 
-                            <div class="bg-[var(--background-yellow)] py-1 px-2 rounded-sm">
+                            <div id="medium-priority" class="bg-[var(--background-yellow)] py-1 px-2 rounded-sm">
                                 <p class="text-[var(--yellow)]">متوسط</p>
                             </div>
 
                             <div class="h-5 w-[0.5px] bg-[var(--neutral-8)]"></div>
 
-                            <div class="bg-[var(--background-red)] py-1 px-2 rounded-sm">
+                            <div id="high-priority" class="bg-[var(--background-red)] py-1 px-2 rounded-sm">
                                 <p class="text-[var(--red)]">بالا</p>
                             </div>
                         </div>
+
+                        <div class="font-[YekanBakh-regular] text-xs"> 
+                            <div id="selected-low-priority" class="bg-[var(--background-green)] py-1 px-2 rounded-sm gap-3 hidden w-fit items-center">
+                                <button class="unset-tag"><img src="./assets/images/close-circle.svg" alt="close"></button>
+                                <p class="text-[var(--green)]">پایین</p>
+                            </div>
+                            <div id="selected-medium-priority" class="bg-[var(--background-yellow)] py-1 px-2 rounded-sm gap-3 hidden w-fit items-center">
+                                <button class="unset-tag"><img src="./assets/images/close-circle.svg" alt="close"></button>
+                                <p class="text-[var(--yellow)]">متوسط</p>
+                            </div>
+                            <div id="selected-high-priority" class="bg-[var(--background-red)] py-1 px-2 rounded-sm gap-3 hidden w-fit items-center">
+                                <button class="unset-tag"><img src="./assets/images/close-circle.svg" alt="close"></button>
+                                <p class="text-[var(--red)]">بالا</p>
+                            </div>
+                        </div>
+
                     </div>
 
                     <hr class="border-[var(--neutral-8)] mt-4">
@@ -121,7 +139,7 @@
                     <div class="flex flex-col gap2 px-5 mt-2">
                         <div class="flex gap-2 justify-end">
                             <button id="add-new-task-close-btn" class="rounded-md p-1.5 bg-[var(--neutral-9)]"><img src="./assets/images/close.svg" alt="close"></button>
-                            <button class="font-[YekanBakh-regular] text-xs bg-[var(--primary-light)] rounded-md px-5 py-1.5 text-white">اضافه کردن تسک</button>
+                            <button disabled id="submit-task-btn" class="font-[YekanBakh-regular] text-xs bg-[var(--primary-light)] rounded-md px-5 py-1.5 text-white">اضافه کردن تسک</button>
                         </div>
                     </div> 
                 </div>
@@ -161,6 +179,6 @@
                 </div>
             </section>
         </main>
-        <script src="./scripts/sideMenu.js" type="module"></script>
+        <script src="./scripts/main.js" type="module"></script>
     </body>
 </html>

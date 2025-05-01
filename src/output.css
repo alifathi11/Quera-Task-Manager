@@ -471,10 +471,26 @@
       font-family: YekanBakh-regular;
     }
   }
+  .placeholder\:font-\[YekanBakh-semi-bold\] {
+    &::placeholder {
+      font-family: YekanBakh-semi-bold;
+    }
+  }
+  .placeholder\:text-sm {
+    &::placeholder {
+      font-size: var(--text-sm);
+      line-height: var(--tw-leading, var(--text-sm--line-height));
+    }
+  }
   .placeholder\:text-xs {
     &::placeholder {
       font-size: var(--text-xs);
       line-height: var(--tw-leading, var(--text-xs--line-height));
+    }
+  }
+  .placeholder\:text-\[var\(--neutral-4\)\] {
+    &::placeholder {
+      color: var(--neutral-4);
     }
   }
   .placeholder\:text-\[var\(--neutral-5\)\] {
