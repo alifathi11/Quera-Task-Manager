@@ -3,6 +3,7 @@ export default class Task {
         this.name = name;
         this.description = description;
         this.priority = priority;
+        this.done = false;
     }
 
     get getName() {
@@ -17,6 +18,10 @@ export default class Task {
         return this.description;
     }
 
+    get isDone() {
+        return this.done;
+    }
+
     set setName(name) {
         this.name = name;
     }
@@ -27,5 +32,9 @@ export default class Task {
     
     set setPriority(priority) {
         this.priority = priority;
+    }
+
+    set isDone(done) {
+        this.done = done;
     }
 }

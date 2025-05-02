@@ -81,7 +81,7 @@
 
                 <div class="flex flex-col gap-1">
                     <h3 class="font-[YekanBakh-bold] text-base">تسک‌های امروز</h3>
-                    <p class="font-[YekanBakh-regular] text-xs text-[var(--neutral-4)]">تسکی برای امروز نداری!</p>
+                    <p id="active-tasks-report" class="font-[YekanBakh-regular] text-xs text-[var(--neutral-4)]"></p>
                 </div>
 
                 <div id="add-new-task-btn" class="flex gap-1 items-center mt-5 border-1 rounded-xl py-2 px-3 border-dashed border-[var(--neutral-6)]">
@@ -91,15 +91,15 @@
 
                 <div id="add-new-task-area" class="hidden flex-col gap-3 border-1 border-[var(--neutral-8)] rounded-xl py-4 mt-10">
                     <div class="flex flex-col gap-3 px-5">
-                        <input id="task-name" type="text" placeholder="نام تسک" class="placeholder:font-[YekanBakh-semi-bold] placeholder:text-sm placeholder:text-[var(--neutral-4)] outline-none">
-                        <textarea id="task-description" placeholder="توضیحات" class="placeholder:text-xs placeholder:font-[YekanBakh-regular] placeholder:text-[var(--neutral-5)] resize-none outline-none"></textarea>
+                        <input id="task-name-input" type="text" placeholder="نام تسک" class="placeholder:font-[YekanBakh-semi-bold] placeholder:text-sm placeholder:text-[var(--neutral-4)] outline-none">
+                        <textarea id="task-description-input" placeholder="توضیحات" class="placeholder:text-xs placeholder:font-[YekanBakh-regular] placeholder:text-[var(--neutral-5)] resize-none h-7 outline-none"></textarea>
 
                         <button id="open-tags-btn" class="flex gap-2 items-center border-1 border-[var(--neutral-8)] rounded-lg py-2 px-3 w-fit">
                             <img id="tag-image" src="./assets/images/tag-right.svg" alt="tag">
                             <p class="text-xs text-[var(--neutral-5)] font-[YekanBakh-regular]">تگ‌ها</p>
                         </button>
                         
-                        <div id="tags-bar" class="mt-5 rounded-lg border-1 border-[var(--neutral-8)] font-[YekanBakh-regular] text-xs flex items-center gap-3 w-fit p-2">
+                        <div id="tags-bar" class="mt-2 rounded-lg border-1 border-[var(--neutral-8)] font-[YekanBakh-regular] text-xs flex items-center gap-3 w-fit p-2">
                             <div id="low-priority" class="bg-[var(--background-green)] py-1 px-2 rounded-sm">
                                 <p class="text-[var(--green)]">پایین</p>
                             </div>
@@ -134,19 +134,21 @@
 
                     </div>
 
-                    <hr class="border-[var(--neutral-8)] mt-4">
+                    <hr class="border-[var(--neutral-8)]">
 
                     <div class="flex flex-col gap2 px-5 mt-2">
                         <div class="flex gap-2 justify-end">
                             <button id="add-new-task-close-btn" class="rounded-md p-1.5 bg-[var(--neutral-9)]"><img src="./assets/images/close.svg" alt="close"></button>
-                            <button disabled id="submit-task-btn" class="font-[YekanBakh-regular] text-xs bg-[var(--primary-light)] rounded-md px-5 py-1.5 text-white">اضافه کردن تسک</button>
+                            <button disabled id="submit-task-btn" class="font-[YekanBakh-regular] text-xs bg-[var(--disabled-btn-blue)] rounded-md px-5 py-1.5 text-white">اضافه کردن تسک</button>
                         </div>
                     </div> 
                 </div>
 
+                <div id="active-tasks" class="mt-5 flex flex-col items-center"></div>
+
             </section>
 
-            <div class="flex flex-col gap-3 mx-3 px-5 text-center">
+            <div id="artboard" class="flex flex-col gap-3 mx-3 px-5 text-center">
                 <img src="./assets/images/Artboard.svg" alt="Artboard" class="mt-10">
                 <p class="font-[YekanBakh-bold] text-base text-[var(--neutral-4)] mt-3">چه کارهایی امروز برای انجام داری؟</p>
                 <p class="font-[YekanBakh-semi-bold] text-sm text-[var(--neutral-5)]">
@@ -154,29 +156,12 @@
                 </p>
             </div>
 
-            <section class="flex flex-col gap-3 mx-3 mt-10">
+            <section class="flex flex-col gap-3 mx-3 mt-20">
                 <h3 class="font-[YekanBakh-bold] text-base">تسک‌های انجام شده</h3>
-                <p class="font-[YekanBakh-regular] text-xs text-[var(--neutral-3)]">3 تسک را باید انجام دهید.</p>
-                <div class="flex flex-col gap-3 justify-center items-center mt-5">
-                    <div class="flex w-full px-3 py-5 items-center justify-between mx-2 relative rounded-xl border-1 border-[var(--neutral-8)]">
-                        <img src="./assets/images/marker-yellow.svg" alt="marker" class="absolute right-0">
-                        <img src="./assets/images/tick-square.svg" alt="tick-square">
-                        <p class="font-[YekanBakh-regular] text-xs line-through px-5">خرید میوه و سبزیجات و لبنیات برای خانه</p>
-                        <img src="./assets/images/dots-menu.svg" alt="menu">
-                    </div>
-                    <div class="flex w-full px-3 py-5 items-center justify-between mx-2 relative rounded-xl border-1 border-[var(--neutral-8)]">
-                        <img src="./assets/images/marker-red.svg" alt="marker" class="absolute right-0">
-                        <img src="./assets/images/tick-square.svg" alt="tick-square">
-                        <p class="font-[YekanBakh-regular] text-xs line-through px-5">تماس با مبل فروشی در مورد تاخیر در ارسال</p>
-                        <img src="./assets/images/dots-menu.svg" alt="menu">
-                    </div>
-                    <div class="flex w-full px-3 py-5 items-center justify-between mx-2 relative rounded-xl border-1 border-[var(--neutral-8)]">
-                        <img src="./assets/images/marker-green.svg" alt="marker" class="absolute right-0">
-                        <img src="./assets/images/tick-square.svg" alt="tick-square">
-                        <p class="font-[YekanBakh-regular] text-xs line-through px-5">جلسه با مرتضی در مورد مصاحبه با کارآموز ادمین پنل</p>
-                        <img src="./assets/images/dots-menu.svg" alt="menu">
-                    </div>
-                </div>
+                <p id="completed-tasks-report" class="font-[YekanBakh-regular] text-xs text-[var(--neutral-3)]"></p>
+
+                <div id="completed-tasks" class="flex flex-col gap-3 justify-center items-center mt-5"></div>
+
             </section>
         </main>
         <script src="./scripts/main.js" type="module"></script>

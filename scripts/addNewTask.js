@@ -1,5 +1,6 @@
 import Task from "./task.js";
-import data from "./data.js";
+import {data} from "./data.js";
+import updatePage from "./update.js";
 
 export default function addNewTask() {
     const lowPriority = document.getElementById('low-priority');
@@ -11,20 +12,18 @@ export default function addNewTask() {
     const unsetTagsBtns = document.querySelectorAll('.unset-tag');
     const tagsBar = document.getElementById('tags-bar');
     const openTagsBtn = document.getElementById('open-tags-btn');
-    const taskNameInput = document.getElementById('task-name');
-    const taskDescriptionInput = document.getElementById('task-description');
+    const taskNameInput = document.getElementById('task-name-input');
+    const taskDescriptionInput = document.getElementById('task-description-input');
     const submitTaskBtn = document.getElementById('submit-task-btn');
+    const addNewTaskBtn = document.getElementById('add-new-task-btn');
+    const addNewTaskArea = document.getElementById('add-new-task-area');
 
     const priorityOptions = [lowPriority, mediumPriority, highPriority];
-
-    let selectedPrioriry;
-
     let tagSelected = false;
     let taskPriority;
 
     priorityOptions.forEach(option => {
         option.onclick = () => {
-            selectedPrioriry = option;
             tagSelected = true;
             checkSubmitBtn();
 
@@ -54,6 +53,7 @@ export default function addNewTask() {
         btn.onclick = () => {
             tagSelected = false;
             taskPriority = null;
+            checkSubmitBtn();
 
             btn.closest("div").classList.remove("flex");
             btn.closest("div").classList.add("hidden");
@@ -66,8 +66,12 @@ export default function addNewTask() {
     const checkSubmitBtn = function () {
         if ((taskNameInput.value.trim() !== "") && (taskDescriptionInput.value.trim() !== "") && tagSelected) {
             submitTaskBtn.disabled = false;
+            submitTaskBtn.classList.remove('bg-[var(--disabled-btn-blue)]');
+            submitTaskBtn.classList.add('bg-[var(--primary-light)]');
         } else {
             submitTaskBtn.disabled = true;
+            submitTaskBtn.classList.remove('bg-[var(--primary-light)]');
+            submitTaskBtn.classList.add('bg-[var(--disabled-btn-blue)]');
         }
     }
 
@@ -75,12 +79,32 @@ export default function addNewTask() {
     taskDescriptionInput.addEventListener("input", checkSubmitBtn);
 
     submitTaskBtn.onclick = () => {
+
+        addNewTaskBtn.classList.remove('hidden');
+        addNewTaskBtn.classList.add('flex');
+        addNewTaskArea.classList.remove('flex');
+        addNewTaskArea.classList.add('hidden');
+
         let name = taskNameInput.value;
         let description = taskDescriptionInput.value;
         let priority = taskPriority;
 
         let newTask = new Task(name, description, priority);
 
-        // TODO: add task to json
+        data.push(newTask);
+
+        taskNameInput.value = "";
+        taskDescriptionInput.value = "";
+        tagSelected = false;
+        taskPriority = null;
+        [selectedHighPriority, selectedLowPriority, selectedMediumPriority].forEach(tag => {
+            tag.classList.remove('flex');
+            tag.classList.add('hidden');
+        });
+        tagsBar.classList.add('open');
+
+        checkSubmitBtn();
+        
+        updatePage();
     };
 }

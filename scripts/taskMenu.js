@@ -1,3 +1,5 @@
+import { data } from "./data.js";
+
 export default function handleTaskMenu() {
     const addNewTaskBtn = document.getElementById('add-new-task-btn');
     const addNewTaskCloseBtn = document.getElementById('add-new-task-close-btn');
@@ -5,6 +7,7 @@ export default function handleTaskMenu() {
     const openTagsBtn = document.getElementById('open-tags-btn');
     const tagsBar = document.getElementById('tags-bar');
     const tagImage = document.getElementById('tag-image');
+    const artboard = document.getElementById('artboard');
     let imageToggleState = false;
 
     addNewTaskBtn.onclick = () => {
@@ -12,7 +15,9 @@ export default function handleTaskMenu() {
         addNewTaskBtn.classList.add('hidden');
         addNewTaskArea.classList.remove('hidden');
         addNewTaskArea.classList.add('flex');
-    };
+        artboard.classList.remove('flex');
+        artboard.classList.add('hidden');
+    };  
 
     addNewTaskCloseBtn.onclick = () => {
         addNewTaskArea.classList.remove('flex');
@@ -22,6 +27,10 @@ export default function handleTaskMenu() {
         imageToggleState = false;
         tagImage.src = "./assets/images/tag-right.svg";
         tagsBar.classList.remove('open');
+        if (data.length === 0) {
+            artboard.classList.remove('hidden');
+            artboard.classList.add('flex');
+        }
     };
 
     openTagsBtn.onclick = () => {
