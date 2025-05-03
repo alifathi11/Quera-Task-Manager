@@ -93,18 +93,21 @@
     --primary-hover-dark: rgba(107, 164, 250, 1);
     --background-dark: rgba(8,12,23,255);
     --background-dark-2: rgba(12,17,31,255);
+    --background-dark-3: rgba(12, 27, 49, 1);
     --background-dark-footer: rgba(8, 16, 33, 1);
-    --background-dark-light: rgba(11,25,45);
     --background-dark-light-2: rgba(14, 30, 52, 1);
-    --on-background-dark: rgba(4, 8, 16, 1);
+    --on-background-dark: rgba(0, 34, 71, 1);
+    --on-background-dark-2: rgba(4, 25, 51, 1); 
     --text-white: rgba(230, 230, 230, 1);
     --text-white-2: rgba(240, 240, 240, 1);
     --surface-dark: rgba(230, 233, 239, 1);
     --border-dark: rgba(32, 62, 98, 1);
-    --border-dark-2: rgba(47, 49, 50, 1);
+    --border-dark-2: rgba(61, 61, 61, 1);
     --placeholder-dark: rgba(109, 117, 129, 1);
-    --button-background-dark: rgba(18, 37, 73, 1);
+    --button-background-dark: rgb(70, 84, 110);
     --dark-gray-text: rgba(132, 136, 144, 1);
+    --dark-gray-border: rgba(131, 135, 143, 1);
+    --disabled-btn-dark: rgba(11,23,46,255);
 }
 
 html, body {

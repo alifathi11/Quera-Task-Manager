@@ -64,14 +64,29 @@ export default function addNewTask() {
     });
 
     const checkSubmitBtn = function () {
+        let isDarkMode = document.documentElement.classList.contains('dark');
         if ((taskNameInput.value.trim() !== "") && (taskDescriptionInput.value.trim() !== "") && tagSelected) {
             submitTaskBtn.disabled = false;
-            submitTaskBtn.classList.remove('bg-[var(--disabled-btn-blue)]');
-            submitTaskBtn.classList.add('bg-[var(--primary-light)]');
+            if (!isDarkMode) {
+                submitTaskBtn.classList.remove('bg-[var(--disabled-btn-blue)]');
+                submitTaskBtn.classList.add('bg-[var(--primary-light)]');
+            } else {
+                submitTaskBtn.classList.remove('dark:bg-[var(--disabled-btn-dark)]');
+                submitTaskBtn.classList.add('dark:bg-[var(--on-background-dark)]');
+                submitTaskBtn.classList.remove('dark:text-[var(--dark-gray-text)]');
+                submitTaskBtn.classList.add('dark:text-white');
+            }
         } else {
             submitTaskBtn.disabled = true;
-            submitTaskBtn.classList.remove('bg-[var(--primary-light)]');
-            submitTaskBtn.classList.add('bg-[var(--disabled-btn-blue)]');
+            if (!isDarkMode) {
+                submitTaskBtn.classList.remove('bg-[var(--primary-light)]');
+                submitTaskBtn.classList.add('bg-[var(--disabled-btn-blue)]');
+            } else {
+                submitTaskBtn.classList.remove('dark:bg-[var(--on-background-dark)]');
+                submitTaskBtn.classList.add('dark:bg-[var(--disabled-btn-dark)]');
+                submitTaskBtn.classList.remove('dark:text-white');
+                submitTaskBtn.classList.add('dark:text-[var(--dark-gray-text)]');
+            }
         }
     }
 
