@@ -1,6 +1,6 @@
-import Task from "./task.js";
-import {data} from "./data.js";
-import updatePage from "./update.js";
+import Task from "./Task.js";
+import {data} from "./Data.js";
+import updatePage from "./Update.js";
 
 export default function addNewTask() {
     const lowPriority = document.getElementById('low-priority');

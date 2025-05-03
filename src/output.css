@@ -194,9 +194,6 @@
   .right-3 {
     right: calc(var(--spacing) * 3);
   }
-  .left-0 {
-    left: calc(var(--spacing) * 0);
-  }
   .left-2 {
     left: calc(var(--spacing) * 2);
   }
@@ -567,6 +564,46 @@
       color: var(--neutral-5);
     }
   }
+  .dark\:block {
+    &:where(.dark, .dark *) {
+      display: block;
+    }
+  }
+  .dark\:hidden {
+    &:where(.dark, .dark *) {
+      display: none;
+    }
+  }
+  .dark\:border-\[var\(--border-dark\)\] {
+    &:where(.dark, .dark *) {
+      border-color: var(--border-dark);
+    }
+  }
+  .dark\:bg-\[var\(--background-dark-2\)\] {
+    &:where(.dark, .dark *) {
+      background-color: var(--background-dark-2);
+    }
+  }
+  .dark\:bg-\[linear-gradient\(to_bottom\,\#080c17_0\%\,\#080c17_100\%\)\] {
+    &:where(.dark, .dark *) {
+      background-image: linear-gradient(to bottom,#080c17 0%,#080c17 100%);
+    }
+  }
+  .dark\:text-\[var\(--dark-gray-text\)\] {
+    &:where(.dark, .dark *) {
+      color: var(--dark-gray-text);
+    }
+  }
+  .dark\:text-\[var\(--primary-dark\)\] {
+    &:where(.dark, .dark *) {
+      color: var(--primary-dark);
+    }
+  }
+  .dark\:text-white {
+    &:where(.dark, .dark *) {
+      color: var(--color-white);
+    }
+  }
 }
 @font-face {
   font-family: Abar-regular;
@@ -640,9 +677,10 @@
   --background-yellow: rgba(255, 239, 214, 1);
   --red: rgba(255, 95, 55, 1);
   --background-red: rgba(255, 226, 219, 1);
+  --primary-dark: rgba(87, 168, 255, 1);
   --primary-hover-dark: rgba(107, 164, 250, 1);
-  --background-dark: rgba(255, 255, 255, 1);
-  --background-dark-2: rgba(6,12,24);
+  --background-dark: rgba(8,12,23,255);
+  --background-dark-2: rgba(12,17,31,255);
   --background-dark-footer: rgba(8, 16, 33, 1);
   --background-dark-light: rgba(11,25,45);
   --background-dark-light-2: rgba(14, 30, 52, 1);
@@ -650,10 +688,11 @@
   --text-white: rgba(230, 230, 230, 1);
   --text-white-2: rgba(240, 240, 240, 1);
   --surface-dark: rgba(230, 233, 239, 1);
-  --border-dark: rgba(41, 50, 66, 1);
+  --border-dark: rgba(32, 62, 98, 1);
   --border-dark-2: rgba(47, 49, 50, 1);
   --placeholder-dark: rgba(109, 117, 129, 1);
   --button-background-dark: rgba(18, 37, 73, 1);
+  --dark-gray-text: rgba(132, 136, 144, 1);
 }
 html, body {
   overflow-x: hidden;

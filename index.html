@@ -6,14 +6,18 @@
     <link href="./src/output.css" rel="stylesheet">
     <title>Document</title>
 </head>
-    <body class="bg-[linear-gradient(to_bottom,#e2e2e2_0%,#fefefe_10%)]">
+    <body class="bg-[linear-gradient(to_bottom,#e2e2e2_0%,#fefefe_10%)] dark:bg-[linear-gradient(to_bottom,#080c17_0%,#080c17_100%)]">
 
-        <header class="flex justify-center items-center my-5 mx-5 rounded-lg bg-[var(--background-light)] py-3 relative">
-            <button id="hamburger-btn" class="absolute right-3"><img src="./assets/images/menu.svg" alt="hamburger-menu"></button>
-            <h1 class="font-[YekanBakh-semi-bold] text-base mx-auto">کوئرا لیست</h1>
+        <header class="flex justify-center items-center my-5 mx-5 rounded-lg bg-[var(--background-light)] py-3 relative
+        dark:bg-[var(--background-dark-2)]">
+            <button id="hamburger-btn" class="absolute right-3">
+                <img src="./assets/images/menu.svg" alt="hamburger-menu" class="dark:hidden">
+                <img src="./assets/images/menu-dark.svg" alt="hamburger-menu" class="hidden dark:block">
+            </button>
+            <h1 class="font-[YekanBakh-semi-bold] text-base mx-auto dark:text-white">کوئرا لیست</h1>
         </header>
 
-        <aside id="side-menu" class="fixed top-0 w-[80vw] flex flex-col gap-10 px-3 py-7 font-[YekanBakh-semi-bold] text-base bg-[var(--background-light)] h-full z-10">
+        <aside id="side-menu" class="dark:text-blue fixed top-0 w-[80vw] flex flex-col gap-10 px-3 py-7 font-[YekanBakh-semi-bold] text-base bg-[var(--background-light)] h-full z-10">
             <div class="flex justify-between items-center ml-auto w-full pr-5">
                 <h2 class="font-[YekanBakh-semi-bold] text-base">کوئرا لیست</h2>
                 <button id="side-menu-close-btn"><img src="./assets/images/close-circle.svg" alt="close"></button>
@@ -49,14 +53,14 @@
                 </div>
             </div>
             <div class="mt-16 flex justify-between items-center bg-[var(--neutral-9)] rounded-lg px-1 py-1 mx-5 text-sm">
-                <div class="flex-1/2 flex gap-3 items-center bg-[var(--background-light)] rounded-lg py-2 px-3">
+                <button id="light-mode-btn" class="flex-1/2 flex gap-3 items-center bg-[var(--background-light)] rounded-lg py-2 px-3">
                     <img src="./assets/images/sun.svg" alt="sun">
                     <p>روشن</p>
-                </div>
-                <div class="flex-1/2 flex gap-3 items-center rounded-lg py-2 px-3 text-[var(--neutral-4)]">
+                </button>
+                <button id="dark-mode-btn" class="flex-1/2 flex gap-3 items-center rounded-lg py-2 px-3 text-[var(--neutral-4)]">
                     <img src="./assets/images/moon.svg" alt="moon">
                     <p>تاریک</p>
-                </div>
+                </button>
             </div>
             <hr class="mx-5 border-[var(--neutral-8)] mt-[-15px]">
             <div class="flex gap-3 items-center px-5 mt-[-12px]">
@@ -68,27 +72,31 @@
         <div class="flex items-center gap-3 mx-5 mt-5">
             <img src="./assets/images/Roya.svg" alt="user-image">
             <div class="flex flex-col gap-1 justify-center items-start mt-3">
-                <h2 class="font-[YekanBakh-bold] text-lg">سلام، رویا</h2>
-                <p class="font-[YekanBakh-semi-bold] text-sm text-[var(--neutral-4)]">امروز، سه‌شنبه، 5 بهمن 1402</p>
+                <h2 class="font-[YekanBakh-bold] text-lg dark:text-white">سلام، رویا</h2>
+                <p class="font-[YekanBakh-semi-bold] text-sm text-[var(--neutral-4)] dark:text-[var(--dark-gray-text)]">امروز، سه‌شنبه، 5 بهمن 1402</p>
             </div>
         </div>
 
         
 
-        <hr class="mt-5 mx-5 border-t-[var(--neutral-8)]">
+        <hr class="mt-5 mx-5 border-t-[var(--neutral-8)] dark:hidden">
 
         <main>
 
             <section class="mt-6 mx-5">
 
                 <div class="flex flex-col gap-1">
-                    <h3 class="font-[YekanBakh-bold] text-base">تسک‌های امروز</h3>
-                    <p id="active-tasks-report" class="font-[YekanBakh-regular] text-xs text-[var(--neutral-4)]"></p>
+                    <h3 class="font-[YekanBakh-bold] text-base dark:text-white">تسک‌های امروز</h3>
+                    <p id="active-tasks-report" class="font-[YekanBakh-regular] text-xs text-[var(--neutral-4)] dark:text-[var(--dark-gray-text)]"></p>
                 </div>
 
-                <div id="add-new-task-btn" class="flex gap-1 items-center mt-5 border-1 rounded-xl py-2 px-3 border-dashed border-[var(--neutral-6)]">
-                    <img src="./assets/images/add.svg" alt="add">
-                    <span class="text-[var(--primary)] font-[YekanBakh-semi-bold] text-sm">افزودن وظیفه جدید</span>
+                <div id="add-new-task-btn" class="flex gap-1 items-center mt-5 border-1 rounded-xl py-2 px-3 border-dashed border-[var(--neutral-6)]
+                dark:border-[var(--border-dark)] dark:bg-[var(--background-dark-2)]">
+                    <button>
+                        <img src="./assets/images/add.svg" alt="add" class="dark:hidden">
+                        <img src="./assets/images/add-dark.svg" alt="add" class="hidden dark:block">
+                    </button>
+                    <span class="text-[var(--primary)] font-[YekanBakh-semi-bold] text-sm dark:text-[var(--primary-dark)]">افزودن وظیفه جدید</span>
                 </div>
 
                 <div id="add-new-task-area" class="hidden flex-col gap-3 border-1 border-[var(--neutral-8)] rounded-xl py-4 mt-10">
@@ -151,7 +159,8 @@
             </section>
 
             <div id="artboard" class="flex flex-col gap-3 mx-3 px-5 text-center">
-                <img src="./assets/images/Artboard.svg" alt="Artboard" class="mt-10">
+                <img src="./assets/images/Artboard.svg" alt="Artboard" class="mt-10 dark:hidden">
+                <img src="./assets/images/Artboard.svg" alt="Artboard" class="mt-10 hidden dark:block">
                 <p class="font-[YekanBakh-bold] text-base text-[var(--neutral-4)] mt-3">چه کارهایی امروز برای انجام داری؟</p>
                 <p class="font-[YekanBakh-semi-bold] text-sm text-[var(--neutral-5)]">
                     میتونی الان تسک‌هاتو اینجا بنویسی و برنامه ریزی رو شروع کنی!
@@ -159,8 +168,8 @@
             </div>
 
             <section class="flex flex-col gap-3 mx-3 mt-20">
-                <h3 class="font-[YekanBakh-bold] text-base">تسک‌های انجام شده</h3>
-                <p id="completed-tasks-report" class="font-[YekanBakh-regular] text-xs text-[var(--neutral-3)]"></p>
+                <h3 class="font-[YekanBakh-bold] text-base dark:text-white">تسک‌های انجام شده</h3>
+                <p id="completed-tasks-report" class="font-[YekanBakh-regular] text-xs text-[var(--neutral-3)] dark:text-[var(--dark-gray-text)]"></p>
 
                 <div id="completed-tasks" class="flex flex-col gap-3 justify-center items-center mt-5"></div>
 

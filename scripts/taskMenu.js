@@ -1,4 +1,4 @@
-import { data } from "./data.js";
+import { data } from "./Data.js";
 import deleteTask from "./deleteTask.js";
 
 export default function handleTaskMenu() {

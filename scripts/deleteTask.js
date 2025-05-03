@@ -1,5 +1,5 @@
-import { data as tasks } from "./data.js";
-import updatePage from "./update.js";
+import { data as tasks } from "./Data.js";
+import updatePage from "./Update.js";
 
 export default function deleteTask(task) {
     const taskName = task.querySelector('.task-name').innerText;

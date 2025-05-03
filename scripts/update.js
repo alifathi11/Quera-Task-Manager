@@ -1,4 +1,4 @@
-import {data as tasks} from "./data.js";
+import {data as tasks} from "./Data.js";
 
 export default function updatePage() {
     const activeTasks = [];

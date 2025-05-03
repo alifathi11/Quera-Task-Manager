@@ -1,8 +1,9 @@
 import addNewTask from "./addNewTask.js";
-import handleSideMenu from "./sideMenu.js";
-import handleTaskMenu from "./taskMenu.js";
+import handleSideMenu from "./SideMenu.js";
+import handleTaskMenu from "./TaskMenu.js";
 import completeTaskEventListener from "./completeTask.js";
-import updatePage from "./update.js";
+import toggleDarkMode from "./ToggleDarkMode.js";
+import updatePage from "./Update.js";
 
 
 window.onload = function() {
@@ -11,4 +12,5 @@ window.onload = function() {
     handleSideMenu();
     handleTaskMenu();
     completeTaskEventListener();
+    toggleDarkMode();
 };
