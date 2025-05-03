@@ -56,9 +56,25 @@ function updateActiveTasks(activeTasks) {
                 <p class="task-description text-xs font-[YekanBakh-regular] text-[var(--neutral-4)]">${activeTasks[i].description}</p>
             </div>
 
-            <button class="mr-auto">   
+            <button class="edit-delete-menu-btn mr-auto">   
                 <img src="./assets/images/dots-menu.svg" alt="menu">
             </button>
+
+            <div class="edit-delete-menu hidden rounded-lg border-1 border-[var(--neutral-8)] p-2 font-[YekanBakh-semi-bold] text-[10px] flex-col gap-2 absolute left-2 top-2">
+
+                <div class="edit-task-btn flex gap-1">
+                    <img src="./assets/images/edit.svg" alt="edit" class="w-[15px]">
+                    <p>ویرایش</p>
+                </div>
+
+                <hr class="mx-3 border-[var(--neutral-8)]">
+
+                <div class="delete-task-btn flex gap-1">
+                    <img src="./assets/images/delete.svg" alt="delete" class="w-[15px]">
+                    <p>حذف</p>
+                </div>
+
+            </div>
 
         </div>
         `
@@ -93,7 +109,7 @@ function updateCompletedTasks(completedTasks) {
             <img src="./assets/images/marker-${color}.svg" alt="marker" class="absolute right-0 h-[75%]">
             <img src="./assets/images/tick-square.svg" alt="tick-square">
             <p class="font-[YekanBakh-regular] text-xs line-through px-5">${completedTasks[i].name}</p>
-            <button class="mr-auto"><img src="./assets/images/dots-menu.svg" alt="menu"></button>
+            <button class="edit-delete-menu-btn mr-auto"><img src="./assets/images/dots-menu.svg" alt="menu"></button>
         </div>
         `
         completedTasksDiv.innerHTML += newCompletedTask;

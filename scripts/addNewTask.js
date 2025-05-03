@@ -89,6 +89,9 @@ export default function addNewTask() {
         let description = taskDescriptionInput.value;
         let priority = taskPriority;
 
+        // check that the name is unique
+        // check the description and name length
+
         let newTask = new Task(name, description, priority);
 
         data.push(newTask);
