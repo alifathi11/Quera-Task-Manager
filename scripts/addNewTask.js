@@ -1,6 +1,7 @@
 import Task from "./Task.js";
 import {data} from "./Data.js";
 import updatePage from "./Update.js";
+export {};
 
 export default function addNewTask() {
     const lowPriority = document.getElementById('low-priority');
@@ -64,6 +65,13 @@ export default function addNewTask() {
     });
 
     const checkSubmitBtn = function () {
+
+        if (selectedHighPriority.classList.contains('flex')
+            || selectedMediumPriority.classList.contains('flex')
+            || selectedLowPriority.classList.contains('flex')) {
+                tagSelected = true;
+            }
+
         let isDarkMode = document.documentElement.classList.contains('dark');
         if ((taskNameInput.value.trim() !== "") && (taskDescriptionInput.value.trim() !== "") && tagSelected) {
             submitTaskBtn.disabled = false;
@@ -126,3 +134,4 @@ export default function addNewTask() {
         updatePage();
     };
 }
+

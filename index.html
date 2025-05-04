@@ -7,10 +7,13 @@
     <title>Document</title>
 </head>
     <body class="bg-[linear-gradient(to_bottom,#e2e2e2_0%,#fefefe_10%)] dark:bg-[linear-gradient(to_bottom,#080c17_0%,#080c17_100%)]">
+        
+        <div id="cover" class="opacity-0 transition-[all_ease-in-out_0.3s]">
+            <div class="bg-[var(--neutral-3)] z-10 w-[100vw] h-[100vh] fixed bottom-0 left-0 pointer-events-none dark:hidden"></div>
+            <div class="bg-[var(--background-dark)] z-10 w-[100vw] h-[100vh] fixed bottom-0 left-0 pointer-events-none hidden dark:block"></div>
+        </div>
 
-        <div id="cover" class="bg-[var(--neutral-3)] z-10 w-[100vw] h-[100vh] fixed bottom-0 left-0 opacity-0 pointer-events-none transition-[all_ease-in-out_0.3s]"></div>
-
-        <header class="flex justify-center items-center my-5 mx-5 rounded-lg bg-[var(--background-light)] py-3 relative
+        <header id="header" class="flex justify-center items-center my-5 mx-5 rounded-lg bg-[var(--background-light)] py-3 relative z-20 transition-[all_ease-in-out_0.3s]
         dark:bg-[var(--background-dark-2)]">
             <button id="hamburger-btn" class="absolute right-3">
                 <img src="./assets/images/menu.svg" alt="hamburger-menu" class="dark:hidden">
@@ -19,7 +22,7 @@
             <h1 class="font-[YekanBakh-semi-bold] text-base mx-auto dark:text-white">کوئرا لیست</h1>
         </header>
 
-        <aside id="side-menu" class="fixed top-0 w-[80vw] flex flex-col gap-10 px-3 py-7 font-[YekanBakh-semi-bold] text-base bg-[var(--background-light)] h-full z-20
+        <aside id="side-menu" class="fixed top-0 w-[80vw] flex flex-col gap-10 px-3 py-7 font-[YekanBakh-semi-bold] text-base bg-[var(--background-light)] h-full z-30
         dark:bg-[var(--background-dark-2)]">
             <div class="flex justify-between items-center ml-auto w-full pr-5">
                 <h2 class="font-[YekanBakh-semi-bold] text-base dark:text-white">کوئرا لیست</h2>
@@ -100,7 +103,7 @@
 
         <hr class="mt-5 mx-5 border-t-[var(--neutral-8)] dark:hidden">
 
-        <main>
+        <main class="mb-10">
 
             <section class="mt-6 mx-5">
 
@@ -121,10 +124,10 @@
                 <div id="add-new-task-area" class="hidden flex-col gap-3 border-1 border-[var(--neutral-8)] rounded-xl py-4 mt-10
                 dark:border-[var(--border-dark-2)]">
                     <div class="flex flex-col gap-3 px-5">
-                        <input id="task-name-input" type="text" placeholder="نام تسک" class="placeholder:font-[YekanBakh-semi-bold] placeholder:text-sm placeholder:text-[var(--neutral-4)] outline-none
-                        dark:placeholder:text-white">
-                        <textarea id="task-description-input" placeholder="توضیحات" class="placeholder:text-xs placeholder:font-[YekanBakh-regular] placeholder:text-[var(--neutral-5)] resize-none h-7 outline-none
-                        dark:placeholder:text-[var(--dark-gray-text)]"></textarea>
+                        <input id="task-name-input" type="text" placeholder="نام تسک" class="placeholder:font-[YekanBakh-semi-bold] placeholder:text-sm placeholder:text-[var(--neutral-4)] outline-none font-[YekanBakh-semi-bold] text-sm
+                        dark:placeholder:text-white dark:text-white">
+                        <textarea id="task-description-input" placeholder="توضیحات" class="placeholder:text-xs placeholder:font-[YekanBakh-regular] placeholder:text-[var(--neutral-5)] resize-none h-7 outline-none font-[YekanBakh-regular] text-xs text-[var(--neutral-5)]
+                        dark:placeholder:text-[var(--dark-gray-text)] dark:text-[var(--dark-gray-text)]"></textarea>
 
                         <button id="open-tags-btn" class="flex gap-2 items-center border-1 border-[var(--neutral-8)] rounded-lg py-2 px-3 w-fit
                         dark:border-[var(--dark-gray-border)]">
@@ -132,36 +135,48 @@
                             <p class="text-xs text-[var(--neutral-5)] font-[YekanBakh-regular]">تگ‌ها</p>
                         </button>
                         
-                        <div id="tags-bar" class="mt-2 rounded-lg border-1 border-[var(--neutral-8)] font-[YekanBakh-regular] text-xs flex items-center gap-3 w-fit p-2">
-                            <div id="low-priority" class="bg-[var(--background-green)] py-1 px-2 rounded-sm">
-                                <p class="text-[var(--green)]">پایین</p>
+                        <div id="tags-bar" class="mt-2 rounded-lg border-1 border-[var(--neutral-8)] font-[YekanBakh-regular] text-xs flex items-center gap-3 w-fit p-2 dark:border-[var(--border-dark-3)]">
+                            <div id="low-priority" class="bg-[var(--background-green)] dark:bg-[var(--dark-background-green)] py-1 px-2 rounded-sm">
+                                <p class="text-[var(--green)] dark:text-[var(--dark-green)]">پایین</p>
                             </div>
 
-                            <div class="h-5 w-[0.5px] bg-[var(--neutral-8)]"></div>
+                            <div class="h-5 w-[0.5px] bg-[var(--neutral-8)] dark:bg-[var(--border-dark-3)]"></div>
 
-                            <div id="medium-priority" class="bg-[var(--background-yellow)] py-1 px-2 rounded-sm">
-                                <p class="text-[var(--yellow)]">متوسط</p>
+                            <div id="medium-priority" class="bg-[var(--background-yellow)] dark:bg-[var(--dark-background-yellow)]  py-1 px-2 rounded-sm">
+                                <p class="text-[var(--yellow)] dark:text-[var(--dark-yellow)]">متوسط</p>
                             </div>
 
-                            <div class="h-5 w-[0.5px] bg-[var(--neutral-8)]"></div>
+                            <div class="h-5 w-[0.5px] bg-[var(--neutral-8)] dark:bg-[var(--border-dark-3)]"></div>
 
-                            <div id="high-priority" class="bg-[var(--background-red)] py-1 px-2 rounded-sm">
-                                <p class="text-[var(--red)]">بالا</p>
+                            <div id="high-priority" class="bg-[var(--background-red)] dark:bg-[var(--dark-background-red)] py-1 px-2 rounded-sm">
+                                <p class="text-[var(--red)] dark:text-[var(--dark-red)]">بالا</p>
                             </div>
                         </div>
 
                         <div class="font-[YekanBakh-regular] text-xs"> 
-                            <div id="selected-low-priority" class="bg-[var(--background-green)] py-1 px-2 rounded-sm gap-3 hidden w-fit items-center">
-                                <button class="unset-tag"><img src="./assets/images/close-circle.svg" alt="close"></button>
-                                <p class="text-[var(--green)]">پایین</p>
+                            <div id="selected-low-priority" class="bg-[var(--background-green)] py-1 px-2 rounded-sm gap-2 hidden w-fit items-center
+                            dark:bg-[var(--dark-background-green)]">
+                                <button class="unset-tag">
+                                    <img src="./assets/images/close-circle.svg" alt="close" class="dark:hidden">
+                                    <img src="./assets/images/close-circle-dark.svg" alt="close" class="hidden dark:block">
+                                </button>
+                                <p class="text-[var(--green)] dark:text-[var(--dark-green)]">پایین</p>
                             </div>
-                            <div id="selected-medium-priority" class="bg-[var(--background-yellow)] py-1 px-2 rounded-sm gap-3 hidden w-fit items-center">
-                                <button class="unset-tag"><img src="./assets/images/close-circle.svg" alt="close"></button>
-                                <p class="text-[var(--yellow)]">متوسط</p>
+                            <div id="selected-medium-priority" class="bg-[var(--background-yellow)] py-1 px-2 rounded-sm gap-2 hidden w-fit items-center
+                            dark:bg-[var(--dark-background-yellow)]">
+                                <button class="unset-tag">
+                                    <img src="./assets/images/close-circle.svg" alt="close" class="dark:hidden">
+                                    <img src="./assets/images/close-circle-dark.svg" alt="close" class="hidden dark:block">
+                                </button>
+                                <p class="text-[var(--yellow)] dark:text-[var(--dark-yellow)]">متوسط</p>
                             </div>
-                            <div id="selected-high-priority" class="bg-[var(--background-red)] py-1 px-2 rounded-sm gap-3 hidden w-fit items-center">
-                                <button class="unset-tag"><img src="./assets/images/close-circle.svg" alt="close"></button>
-                                <p class="text-[var(--red)]">بالا</p>
+                            <div id="selected-high-priority" class="bg-[var(--background-red)] py-1 px-2 rounded-sm gap-2 hidden w-fit items-center
+                            dark:bg-[var(--dark-background-red)]">
+                                <button class="unset-tag">
+                                    <img src="./assets/images/close-circle.svg" alt="close" class="dark:hidden">
+                                    <img src="./assets/images/close-circle-dark.svg" alt="close" class="hidden dark:block">
+                                </button>
+                                <p class="text-[var(--red)] dark:text-[var(--dark-red)]">بالا</p>
                             </div>
                         </div>
 
@@ -195,7 +210,7 @@
                 </p>
             </div>
 
-            <section class="flex flex-col gap-3 mx-3 mt-20">
+            <section class="flex flex-col gap-3 mx-3 mt-20 m">
                 <h3 class="font-[YekanBakh-bold] text-base dark:text-white">تسک‌های انجام شده</h3>
                 <p id="completed-tasks-report" class="font-[YekanBakh-regular] text-xs text-[var(--neutral-3)] dark:text-[var(--dark-gray-text)]"></p>
 

@@ -1,5 +1,6 @@
 import { data } from "./Data.js";
 import deleteTask from "./deleteTask.js";
+import editTask from "./EditTask.js";
 
 export default function handleTaskMenu() {
     const addNewTaskBtn = document.getElementById('add-new-task-btn');
@@ -20,9 +21,7 @@ export default function handleTaskMenu() {
         artboard.classList.add('hidden');
     };  
 
-    addNewTaskCloseBtn.onclick = openAddTaskArea;
-
-    function openAddTaskArea() {
+    addNewTaskCloseBtn.onclick = () => {
         addNewTaskArea.classList.remove('flex');
         addNewTaskArea.classList.add('hidden');
         addNewTaskBtn.classList.remove('hidden');
@@ -74,10 +73,14 @@ export default function handleTaskMenu() {
 
     document.addEventListener("click", function(e) {
         const deleteBtn = e.target.closest(".delete-task-btn");
+        const editBtn = e.target.closest(".edit-task-btn");
+
         if (deleteBtn) {
             const activeTask = deleteBtn.closest(".active-task");
             deleteTask(activeTask);
+        } else if (editBtn) {
+            const activeTask = editBtn.closest(".active-task");
+            editTask(activeTask);
         }
     });
-    
 };

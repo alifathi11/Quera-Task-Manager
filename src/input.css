@@ -103,11 +103,18 @@
     --surface-dark: rgba(230, 233, 239, 1);
     --border-dark: rgba(32, 62, 98, 1);
     --border-dark-2: rgba(61, 61, 61, 1);
+    --border-dark-3: rgba(41, 50, 66, 1);
     --placeholder-dark: rgba(109, 117, 129, 1);
     --button-background-dark: rgb(70, 84, 110);
     --dark-gray-text: rgba(132, 136, 144, 1);
     --dark-gray-border: rgba(131, 135, 143, 1);
     --disabled-btn-dark: rgba(11,23,46,255);
+    --dark-green: rgba(2, 225, 162, 1);
+    --dark-background-green: rgba(35, 51, 50, 1);
+    --dark-yellow: rgba(255, 175, 55, 1);
+    --dark-background-yellow: rgba(48, 47, 45, 1);
+    --dark-red: rgba(255, 95, 55, 1);
+    --dark-background-red: rgba(61, 35, 39, 1);
 }
 
 html, body {

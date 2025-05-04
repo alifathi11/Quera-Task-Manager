@@ -213,6 +213,9 @@
   .z-20 {
     z-index: 20;
   }
+  .z-30 {
+    z-index: 30;
+  }
   .mx-2 {
     margin-inline: calc(var(--spacing) * 2);
   }
@@ -257,6 +260,9 @@
   }
   .mr-auto {
     margin-right: auto;
+  }
+  .mb-10 {
+    margin-bottom: calc(var(--spacing) * 10);
   }
   .ml-auto {
     margin-left: auto;
@@ -390,6 +396,9 @@
   .border-t-\[var\(--neutral-8\)\] {
     border-top-color: var(--neutral-8);
   }
+  .bg-\[var\(--background-dark\)\] {
+    background-color: var(--background-dark);
+  }
   .bg-\[var\(--background-green\)\] {
     background-color: var(--background-green);
   }
@@ -410,6 +419,9 @@
   }
   .bg-\[var\(--neutral-3\)\] {
     background-color: var(--neutral-3);
+  }
+  .bg-\[var\(--neutral-4\)\] {
+    background-color: var(--neutral-4);
   }
   .bg-\[var\(--neutral-8\)\] {
     background-color: var(--neutral-8);
@@ -598,6 +610,26 @@
       color: var(--neutral-5);
     }
   }
+  .dark\:right-2 {
+    &:where(.dark, .dark *) {
+      right: calc(var(--spacing) * 2);
+    }
+  }
+  .dark\:right-5 {
+    &:where(.dark, .dark *) {
+      right: calc(var(--spacing) * 5);
+    }
+  }
+  .dark\:right-\[0\.5px\] {
+    &:where(.dark, .dark *) {
+      right: 0.5px;
+    }
+  }
+  .dark\:right-\[2px\] {
+    &:where(.dark, .dark *) {
+      right: 2px;
+    }
+  }
   .dark\:block {
     &:where(.dark, .dark *) {
       display: block;
@@ -608,6 +640,12 @@
       display: none;
     }
   }
+  .dark\:border-none {
+    &:where(.dark, .dark *) {
+      --tw-border-style: none;
+      border-style: none;
+    }
+  }
   .dark\:border-\[var\(--border-dark\)\] {
     &:where(.dark, .dark *) {
       border-color: var(--border-dark);
@@ -616,6 +654,11 @@
   .dark\:border-\[var\(--border-dark-2\)\] {
     &:where(.dark, .dark *) {
       border-color: var(--border-dark-2);
+    }
+  }
+  .dark\:border-\[var\(--border-dark-3\)\] {
+    &:where(.dark, .dark *) {
+      border-color: var(--border-dark-3);
     }
   }
   .dark\:border-\[var\(--dark-gray-border\)\] {
@@ -636,6 +679,26 @@
   .dark\:bg-\[var\(--background-dark-3\)\] {
     &:where(.dark, .dark *) {
       background-color: var(--background-dark-3);
+    }
+  }
+  .dark\:bg-\[var\(--border-dark-3\)\] {
+    &:where(.dark, .dark *) {
+      background-color: var(--border-dark-3);
+    }
+  }
+  .dark\:bg-\[var\(--dark-background-green\)\] {
+    &:where(.dark, .dark *) {
+      background-color: var(--dark-background-green);
+    }
+  }
+  .dark\:bg-\[var\(--dark-background-red\)\] {
+    &:where(.dark, .dark *) {
+      background-color: var(--dark-background-red);
+    }
+  }
+  .dark\:bg-\[var\(--dark-background-yellow\)\] {
+    &:where(.dark, .dark *) {
+      background-color: var(--dark-background-yellow);
     }
   }
   .dark\:bg-\[var\(--disabled-btn-dark\)\] {
@@ -666,6 +729,21 @@
   .dark\:text-\[var\(--dark-gray-text\)\] {
     &:where(.dark, .dark *) {
       color: var(--dark-gray-text);
+    }
+  }
+  .dark\:text-\[var\(--dark-green\)\] {
+    &:where(.dark, .dark *) {
+      color: var(--dark-green);
+    }
+  }
+  .dark\:text-\[var\(--dark-red\)\] {
+    &:where(.dark, .dark *) {
+      color: var(--dark-red);
+    }
+  }
+  .dark\:text-\[var\(--dark-yellow\)\] {
+    &:where(.dark, .dark *) {
+      color: var(--dark-yellow);
     }
   }
   .dark\:text-\[var\(--neutral-4\)\] {
@@ -784,11 +862,18 @@
   --surface-dark: rgba(230, 233, 239, 1);
   --border-dark: rgba(32, 62, 98, 1);
   --border-dark-2: rgba(61, 61, 61, 1);
+  --border-dark-3: rgba(41, 50, 66, 1);
   --placeholder-dark: rgba(109, 117, 129, 1);
   --button-background-dark: rgb(70, 84, 110);
   --dark-gray-text: rgba(132, 136, 144, 1);
   --dark-gray-border: rgba(131, 135, 143, 1);
   --disabled-btn-dark: rgba(11,23,46,255);
+  --dark-green: rgba(2, 225, 162, 1);
+  --dark-background-green: rgba(35, 51, 50, 1);
+  --dark-yellow: rgba(255, 175, 55, 1);
+  --dark-background-yellow: rgba(48, 47, 45, 1);
+  --dark-red: rgba(255, 95, 55, 1);
+  --dark-background-red: rgba(61, 35, 39, 1);
 }
 html, body {
   overflow-x: hidden;
