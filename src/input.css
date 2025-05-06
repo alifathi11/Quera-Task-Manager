@@ -53,7 +53,7 @@
 :root {
     /* light colors */
     --primary: rgba(44, 126, 248, 1);
-    --primary-hover-light: rgba(7, 92, 217, 1);
+    --primary-hover-light: rgb(241, 247, 255);
     --primary-light: rgba(0, 123, 255, 1);
     --disabled-btn-blue: rgba(131,175,248,255);
     --light-blue-background: rgba(245, 250, 255, 1);
@@ -87,10 +87,14 @@
     --background-yellow: rgba(255, 239, 214, 1);
     --red: rgba(255, 95, 55, 1);
     --background-red: rgba(255, 226, 219, 1);
+    --green-hover: rgb(155, 219, 159);
+    --yellow-hover: rgb(254, 228, 152);
+    --red-hover: rgb(255, 194, 178);
+    --btn-hover-light: rgb(45, 98, 212);
 
     /* dark colors */
     --primary-dark: rgba(87, 168, 255, 1);
-    --primary-hover-dark: rgba(107, 164, 250, 1);
+    --primary-hover-dark: rgb(43, 50, 83);
     --background-dark: rgba(8,12,23,255);
     --background-dark-2: rgba(12,17,31,255);
     --background-dark-3: rgba(12, 27, 49, 1);
@@ -115,6 +119,10 @@
     --dark-background-yellow: rgba(48, 47, 45, 1);
     --dark-red: rgba(255, 95, 55, 1);
     --dark-background-red: rgba(61, 35, 39, 1);
+    --green-hover-dark: rgb(46, 86, 48);
+    --yellow-hover-dark: rgb(81, 67, 34);
+    --red-hover-dark: rgba(116, 66, 55, 0.598);
+    --btn-hover-dark: rgb(0, 23, 72);
 }
 
 html, body {
@@ -133,6 +141,12 @@ body {
 
 #side-menu.open {
     transform: translateX(0);
+}
+
+@media (min-width: 768px) {
+    #side-menu {
+        transform: translateX(0);
+    }
 }
 
 #tags-bar {

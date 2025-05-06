@@ -1,7 +1,7 @@
 import Task from "./Task.js";
 import {data} from "./Data.js";
 import updatePage from "./Update.js";
-export {};
+import checkSubmitBtn from "./CheckSubmitBtn.js";
 
 export default function addNewTask() {
     const lowPriority = document.getElementById('low-priority');
@@ -20,13 +20,9 @@ export default function addNewTask() {
     const addNewTaskArea = document.getElementById('add-new-task-area');
 
     const priorityOptions = [lowPriority, mediumPriority, highPriority];
-    let tagSelected = false;
-    let taskPriority;
 
     priorityOptions.forEach(option => {
         option.onclick = () => {
-            tagSelected = true;
-            checkSubmitBtn();
 
             tagsBar.classList.remove('open');
             openTagsBtn.classList.add('hidden');
@@ -35,74 +31,41 @@ export default function addNewTask() {
                 case lowPriority: 
                     selectedLowPriority.classList.remove('hidden');
                     selectedLowPriority.classList.add('flex');
-                    taskPriority = "low";
                     break;
                 case mediumPriority:
                     selectedMediumPriority.classList.remove('hidden');
                     selectedMediumPriority.classList.add('flex');
-                    taskPriority = "medium";
                     break;
                 case highPriority:
                     selectedHighPriority.classList.remove('hidden');
                     selectedHighPriority.classList.add('flex');
-                    taskPriority = "high";
             }
+
+            checkSubmitBtn();
         };
     });
 
     unsetTagsBtns.forEach(btn => {
         btn.onclick = () => {
-            tagSelected = false;
-            taskPriority = null;
-            checkSubmitBtn();
-
             btn.closest("div").classList.remove("flex");
             btn.closest("div").classList.add("hidden");
 
             tagsBar.classList.add('open');
             openTagsBtn.classList.remove('hidden');
+            checkSubmitBtn();
         };
     });
-
-    const checkSubmitBtn = function () {
-
-        if (selectedHighPriority.classList.contains('flex')
-            || selectedMediumPriority.classList.contains('flex')
-            || selectedLowPriority.classList.contains('flex')) {
-                tagSelected = true;
-            }
-
-        let isDarkMode = document.documentElement.classList.contains('dark');
-        if ((taskNameInput.value.trim() !== "") && (taskDescriptionInput.value.trim() !== "") && tagSelected) {
-            submitTaskBtn.disabled = false;
-            if (!isDarkMode) {
-                submitTaskBtn.classList.remove('bg-[var(--disabled-btn-blue)]');
-                submitTaskBtn.classList.add('bg-[var(--primary-light)]');
-            } else {
-                submitTaskBtn.classList.remove('dark:bg-[var(--disabled-btn-dark)]');
-                submitTaskBtn.classList.add('dark:bg-[var(--on-background-dark)]');
-                submitTaskBtn.classList.remove('dark:text-[var(--dark-gray-text)]');
-                submitTaskBtn.classList.add('dark:text-white');
-            }
-        } else {
-            submitTaskBtn.disabled = true;
-            if (!isDarkMode) {
-                submitTaskBtn.classList.remove('bg-[var(--primary-light)]');
-                submitTaskBtn.classList.add('bg-[var(--disabled-btn-blue)]');
-            } else {
-                submitTaskBtn.classList.remove('dark:bg-[var(--on-background-dark)]');
-                submitTaskBtn.classList.add('dark:bg-[var(--disabled-btn-dark)]');
-                submitTaskBtn.classList.remove('dark:text-white');
-                submitTaskBtn.classList.add('dark:text-[var(--dark-gray-text)]');
-            }
-        }
-    }
 
     taskNameInput.addEventListener("input", checkSubmitBtn);
     taskDescriptionInput.addEventListener("input", checkSubmitBtn);
 
     submitTaskBtn.onclick = () => {
 
+        let taskPriority;
+        if (selectedHighPriority.classList.contains('flex')) taskPriority = "high";
+        else if (selectedLowPriority.classList.contains('flex')) taskPriority = "low";
+        else if (selectedMediumPriority.classList.contains('flex')) taskPriority = "medium";
+        
         addNewTaskBtn.classList.remove('hidden');
         addNewTaskBtn.classList.add('flex');
         addNewTaskArea.classList.remove('flex');
@@ -121,7 +84,6 @@ export default function addNewTask() {
 
         taskNameInput.value = "";
         taskDescriptionInput.value = "";
-        tagSelected = false;
         taskPriority = null;
         [selectedHighPriority, selectedLowPriority, selectedMediumPriority].forEach(tag => {
             tag.classList.remove('flex');
@@ -134,4 +96,5 @@ export default function addNewTask() {
         updatePage();
     };
 }
+
 

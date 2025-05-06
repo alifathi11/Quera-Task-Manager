@@ -1,4 +1,5 @@
 import deleteTask from "./DeleteTask.js";
+import checkSubmitBtn from "./CheckSubmitBtn.js";
 
 export default function editTask(task) {
     const addNewTaskBtn = document.getElementById('add-new-task-btn');
@@ -36,4 +37,6 @@ export default function editTask(task) {
             selectedLowPriority.classList.remove('hidden');
             selectedLowPriority.classList.add('flex');   
     }
+    
+    checkSubmitBtn();
 }

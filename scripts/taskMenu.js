@@ -49,7 +49,7 @@ export default function handleTaskMenu() {
             menuBtn.classList.remove('block');
             menuBtn.classList.add('hidden');
 
-            const menu = menuBtn.closest(".active-task")?.querySelector(".edit-delete-menu");
+            const menu = menuBtn.closest(".task")?.querySelector(".edit-delete-menu");
             if (!menu) return;
     
             menu.classList.remove('hidden');
@@ -76,10 +76,10 @@ export default function handleTaskMenu() {
         const editBtn = e.target.closest(".edit-task-btn");
 
         if (deleteBtn) {
-            const activeTask = deleteBtn.closest(".active-task");
+            const activeTask = deleteBtn.closest(".task");
             deleteTask(activeTask);
         } else if (editBtn) {
-            const activeTask = editBtn.closest(".active-task");
+            const activeTask = editBtn.closest(".task");
             editTask(activeTask);
         }
     });
