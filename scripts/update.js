@@ -46,7 +46,7 @@ function updateActiveTasks(activeTasks) {
             <img src="./assets/images/marker-${color}.svg" alt="marker" class="absolute right-0 h-[75%] dark:hidden">
             <img src="./assets/images/dark-marker-${color}.svg" alt="marker" class="absolute right-0 h-[75%] hidden dark:block">
                         
-            <button class="complete-task-btn">
+            <button class="complete-task-btn cursor-pointer">
                 <img src="./assets/images/check-box.svg" alt="check-box" class="dark:hidden">
                 <img src="./assets/images/check-box.svg" alt="check-box" class="hidden dark:block">
             </button>
@@ -62,7 +62,7 @@ function updateActiveTasks(activeTasks) {
                 <p class="task-description text-xs font-[YekanBakh-regular] text-[var(--neutral-4)] dark:text-[var(--dark-gray-text)]">${activeTasks[i].description}</p>
             </div>
 
-            <button class="edit-delete-menu-btn mr-auto md:w-fit">   
+            <button class="edit-delete-menu-btn mr-auto md:w-fit cursor-pointer">   
                 <img src="./assets/images/dots-menu.svg" alt="menu" class="dark:hidden">
                 <img src="./assets/images/dots-menu-dark.svg" alt="menu" class="hidden dark:block">
             </button>
@@ -70,14 +70,14 @@ function updateActiveTasks(activeTasks) {
             <div class="edit-delete-menu hidden rounded-lg border-1 border-[var(--neutral-8)] p-1 font-[YekanBakh-semi-bold] text-[10px] gap-2 absolute left-2 top-2
             dark:border-[var(--border-dark-2)] dark:bg-[var(--background-dark-2)]">
 
-                <div class="delete-task-btn flex gap-1">
+                <div class="delete-task-btn flex gap-1 cursor-pointer">
                     <img src="./assets/images/tabler-trash-x.svg" alt="delete" class="dark:hidden">
                     <img src="./assets/images/tabler-trash-x-dark.svg" alt="delete" class="hidden dark:block">
                 </div>
 
                 <div class="border-l-1 border-[var(--neutral-8)]"></div>
 
-                <div class="edit-task-btn flex gap-1">
+                <div class="edit-task-btn flex gap-1 cursor-pointer">
                     <img src="./assets/images/tabler-edit.svg" alt="edit" class="dark:hidden">
                     <img src="./assets/images/tabler-edit-dark.svg" alt="edit" class="hidden dark:block">
                 </div>
@@ -122,7 +122,7 @@ function updateCompletedTasks(completedTasks) {
             <img src="./assets/images/tick-square.svg" alt="tick-square-dark" class="hidden dark:block">
             <p class="task-name font-[YekanBakh-regular] text-xs line-through px-5 dark:text-white ml-auto">${completedTasks[i].name}</p>
 
-            <button class="edit-delete-menu-btn mr-auto md:w-fit">
+            <button class="edit-delete-menu-btn mr-auto md:w-fit cursor-pointer">
                 <img src="./assets/images/dots-menu.svg" alt="menu" class="dark:hidden">
                 <img src="./assets/images/dots-menu-dark.svg" alt="menu" class="hidden dark:block">
             </button>
@@ -130,7 +130,7 @@ function updateCompletedTasks(completedTasks) {
             <div class="edit-delete-menu hidden rounded-lg border-1 border-[var(--neutral-8)] p-2 font-[YekanBakh-semi-bold] text-[10px] flex-col gap-2 absolute left-2 top-2
             dark:border-[var(--border-dark-2)] dark:bg-[var(--background-dark-2)]">
 
-                <div class="delete-task-btn flex gap-1">
+                <div class="delete-task-btn flex gap-1 cursor-pointer">
                     <img src="./assets/images/tabler-trash-x.svg" alt="delete" class="dark:hidden">
                     <img src="./assets/images/tabler-trash-x-dark.svg" alt="delete" class="hidden dark:block">
                 </div>

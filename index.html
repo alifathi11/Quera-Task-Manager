@@ -85,12 +85,12 @@
             dark:bg-[var(--background-dark-3)]
             ">
                 <button id="light-mode-btn" class="flex-1/2 flex gap-3 items-center bg-[var(--background-light)] rounded-lg py-2 px-3
-                dark:bg-transparent">
+                dark:bg-transparent cursor-pointer">
                     <img src="./assets/images/sun.svg" alt="sun">
                     <p class="dark:text-[var(--neutral-4)]">روشن</p>
                 </button>
                 <button id="dark-mode-btn" class="flex-1/2 flex gap-3 items-center rounded-lg py-2 px-3
-                dark:bg-[var(--on-background-dark)]">
+                dark:bg-[var(--on-background-dark)] cursor-pointer">
                     <img src="./assets/images/moon.svg" alt="moon" class="dark:hidden">
                     <img src="./assets/images/moon-dark.svg" alt="moon" class="hidden dark:block">
                     <p class="text-[var(--neutral-4)] dark:text-white">تاریک</p>
@@ -116,9 +116,9 @@
         
         <hr class="mt-5 mx-5 border-t-[var(--neutral-8)] dark:hidden md:hidden">
 
-        <main class="mb-10 md:flex md:flex-col md:items-start px-40 md:py-10">
+        <main class="mb-10 md:flex md:flex-col md:items-start p-3 md:px-40 md:py-10">
 
-            <section class="mt-6 mx-5 w-full">
+            <section class="mt-6 w-full">
 
                 <div class="flex flex-col gap-1">
                     <h3 class="font-[YekanBakh-bold] text-base dark:text-white md:text-xl">تسک‌های امروز</h3>
@@ -129,7 +129,7 @@
                 dark:border-[var(--border-dark)] dark:bg-[var(--background-dark-2)] md:w-full md:text-base
                 hover:cursor-pointer hover:bg-[var(--primary-hover-light)] transition-[all_0.3s_ease_in_out]
                 dark:hover:bg-[var(--primary-hover-dark)]">
-                    <button>
+                    <button class="cursor-pointer">
                         <img src="./assets/images/add.svg" alt="add" class="dark:hidden">
                         <img src="./assets/images/add-dark.svg" alt="add" class="hidden dark:block">
                     </button>
@@ -234,7 +234,7 @@
                 </p>
             </div>
 
-            <section class="flex flex-col gap-3 mx-3 mt-20 md:w-full">
+            <section class="flex flex-col gap-3 mt-20 w-full">
                 <h3 class="font-[YekanBakh-bold] text-base dark:text-white md:text-xl">تسک‌های انجام شده</h3>
                 <p id="completed-tasks-report" class="font-[YekanBakh-regular] text-xs md:text-sm text-[var(--neutral-3)] dark:text-[var(--dark-gray-text)]"></p>
 

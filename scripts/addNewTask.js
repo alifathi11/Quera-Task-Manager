@@ -75,8 +75,20 @@ export default function addNewTask() {
         let description = taskDescriptionInput.value;
         let priority = taskPriority;
 
-        // check that the name is unique
-        // check the description and name length
+        if (!isNameUnique(name)) {
+            alert("نام تسک تکراری می‌باشد.");
+            return;
+        }
+
+        if (name.length > 20) {
+            alert("نام تسک بیش از حد طولانی است.")
+            return;
+        }
+
+        if (description.length > 20) {
+            alert("توضیحات بیش از حد طولانی است.")
+            return;
+        }
 
         let newTask = new Task(name, description, priority);
 
@@ -95,6 +107,16 @@ export default function addNewTask() {
         
         updatePage();
     };
+
+
+    const isNameUnique = (name) => {
+        for (let i = 0; i < data.length; i++) {
+            if (data[i].name === name) {
+                return false;
+            }
+        }
+        return true;
+    }
 }
 
 
